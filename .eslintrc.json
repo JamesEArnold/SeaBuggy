@@ -1,5 +1,12 @@
 {
-  "extends": "next/core-web-vitals",
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "no-unused-vars": [
       "error",
@@ -8,6 +15,41 @@
         "ignoreRestSiblings": true,
         "caughtErrors": "none"
       }
-    ]
+    ],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens-new-line",
+        "assignment": "parens-new-line",
+        "return": "parens-new-line",
+        "arrow": "parens-new-line",
+        "condition": "parens-new-line",
+        "logical": "parens-new-line",
+        "prop": "parens-new-line"
+      }
+    ],
+    "react/jsx-indent": ["error", 2], // Enforces 2-space indentation
+    "react/jsx-indent-props": ["error", 2], // Enforces 2-space indentation for props
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeSelfClosing": "always",
+        "afterOpening": "never",
+        "beforeClosing": "never"
+      }
+    ],
+    "react/jsx-closing-bracket-location": [
+      "error",
+      {
+        "nonEmpty": "after-props",
+        "selfClosing": "tag-aligned"
+      }
+    ],
+    "react/react-in-jsx-scope": "off" // Disable rule that requires 'React' in scope
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
