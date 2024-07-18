@@ -79,6 +79,14 @@
         "maxEOF": 1,
         "maxBOF": 0
       }
+    ],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
     ]
   },
   "settings": {
