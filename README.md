@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Making a Commit
+Commitlint and Conventional Commits
+What is Commitlint?
 
-## Getting Started
+Commitlint ensures commit messages follow the Conventional Commits specification. This standardized approach simplifies creating a clear commit history, aiding in automation and collaboration.
+Why Use Conventional Commits?
 
-First, run the development server:
+    Auto-generate CHANGELOGs
+    Semantic Versioning: Determines version bumps (PATCH, MINOR, MAJOR).
+    Clear Communication: Clarifies changes for team members and stakeholders.
+    Automate Processes: Triggers build and publish processes.
+    Ease of Contribution: Simplifies navigation of commit history.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Commit Message Structure
+
+A Conventional Commit message should follow this format:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Common Commit Types
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    fix: Bug fixes (PATCH)
+    feat: New features (MINOR)
+    BREAKING CHANGE: Major changes (MAJOR)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Other types: build, chore, ci, docs, style, refactor, perf, test.
+Examples
 
-## Learn More
+Basic:
+```
+docs: correct spelling of CHANGELOG
+```
+With Scope:
 
-To learn more about Next.js, take a look at the following resources:
+```
+feat(lang): add Polish language
+````
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Breaking Change:
+```
+feat!: send an email to the customer when a product is shipped
+```
+By following these guidelines, we maintain a consistent and clear commit history, facilitating better project management and collaboration.
